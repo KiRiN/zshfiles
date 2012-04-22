@@ -22,10 +22,13 @@ RPROMPT="%{[32m%}[%~]%{[m%}"
 SPROMPT="%{[31m%}%r is correct? [n,y,a,e]:%{[m%} "
 
 ## エイリアス
+setopt complete_aliases
 alias ls='ls -FG'
 alias ll='ls -l'
 alias la='ls -a'
 alias grep='grep --color=auto'
+alias du='du -h'
+alias df='df -h'
 # パイプショートカット
 alias -g L='| less'
 alias -g H='| head'
@@ -39,5 +42,24 @@ alias -g W='| wc'
 ## 補完
 autoload -U compinit
 compinit 
+setopt list_packed
+zstyle ':completion:*' list-colors ''
+# 訂正
+setopt correct
+
+## ディレクトリ
+setopt auto_cd
+setopt auto_pushd
+
+## 色
+export LSCOLORS=ExFxCxdxBxegedabagacad
+export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+
+## キーバインド
+bindkey -e
+
+## 
+setopt noautoremoveslash
 
 
