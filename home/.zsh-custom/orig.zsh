@@ -15,11 +15,10 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end 
 
-## プロンプト ## もっと凝りたい
-PROMPT="%{[33m%}[$USER %.]%{[m%} "
-PROMPT2="%{[33m%}[$USER %_]%{[m%} "
-RPROMPT="%{[32m%}[%~]%{[m%}"
-SPROMPT="%{[31m%}%r is correct? [n,y,a,e]:%{[m%} "
+# promptはthemeを使用
+
+# 右プロンプトは残さない
+setopt transient_rprompt
 
 ## エイリアス
 setopt complete_aliases
