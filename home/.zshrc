@@ -1,79 +1,49 @@
-## 言語
-export LANG=ja_JP.UTF-8
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-## 履歴
-HISTFILE=$HOME/.zsh-history
-HISTSIZE=100000
-SAVEHIST=100000
-setopt hist_ignore_dups     # ignore duplication command history list
-setopt share_history        # share command history data 
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
 
-## 履歴検索
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end 
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-## プロンプト ## もっと凝りたい
-PROMPT="%{[33m%}[$USER %.]%{[m%} "
-PROMPT2="%{[33m%}[$USER %_]%{[m%} "
-RPROMPT="%{[32m%}[%~]%{[m%}"
-SPROMPT="%{[31m%}%r is correct? [n,y,a,e]:%{[m%} "
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-## エイリアス
-setopt complete_aliases
-alias ls='ls -FG'
-alias ll='ls -l'
-alias la='ls -a'
-alias grep='grep --color=auto'
-alias du='du -h'
-alias df='df -h'
-# パイプショートカット
-#alias -g L='| less'
-#alias -g H='| head'
-#alias -g T='| tail'
-#alias -g G='| grep'
-#alias -g W='| wc'
-#alias -g S='| sed'
-#alias -g A='| awk'
-#alias -g W='| wc'
+# Comment this out to disable bi-weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-## 補完
-autoload -U compinit
-compinit 
-setopt list_packed
-zstyle ':completion:*' list-colors ''
-# 訂正
-setopt correct
+# Uncomment to change how often before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
 
-## ディレクトリ
-setopt auto_cd
-setopt auto_pushd
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-## 色
-export LSCOLORS=ExFxCxdxBxegedabagacad
-export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-## キーバインド
-bindkey -e
+# Uncomment following line if you want to disable command autocorrection
+# DISABLE_CORRECTION="true"
 
-## 
-export EDITOR=/usr/bin/vim
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
 
-## 
-setopt noautoremoveslash
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-## perlbrew
-[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git)
 
-## pythonbrew
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+source $ZSH/oh-my-zsh.sh
 
-## nvm
-[[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
-
-## phantomjs
-[[ -d /usr/local/Cellar/phantomjs/1.6.1/bin/ ]] && PATH=$PATH:/usr/local/Cellar/phantomjs/1.6.1/bin/
+# Customize to your needs...
+ZSH_CUSTOM=$HOME/.zsh-custom
 

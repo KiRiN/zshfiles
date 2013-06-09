@@ -1,4 +1,5 @@
 # required homesick installed
+# required oh-my-zsh installed
 
 # install
 homesick clone https://github.com/KiRiN/zshfiles.git
