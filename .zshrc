@@ -15,7 +15,7 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end 
 
-## プロンプト
+## プロンプト ## もっと凝りたい
 PROMPT="%{[33m%}[$USER %.]%{[m%} "
 PROMPT2="%{[33m%}[$USER %_]%{[m%} "
 RPROMPT="%{[32m%}[%~]%{[m%}"
@@ -30,14 +30,14 @@ alias grep='grep --color=auto'
 alias du='du -h'
 alias df='df -h'
 # パイプショートカット
-alias -g L='| less'
-alias -g H='| head'
-alias -g T='| tail'
-alias -g G='| grep'
-alias -g W='| wc'
-alias -g S='| sed'
-alias -g A='| awk'
-alias -g W='| wc'
+#alias -g L='| less'
+#alias -g H='| head'
+#alias -g T='| tail'
+#alias -g G='| grep'
+#alias -g W='| wc'
+#alias -g S='| sed'
+#alias -g A='| awk'
+#alias -g W='| wc'
 
 ## 補完
 autoload -U compinit
@@ -60,6 +60,20 @@ zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'b
 bindkey -e
 
 ## 
+export EDITOR=/usr/bin/vim
+
+## 
 setopt noautoremoveslash
 
+## perlbrew
+[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
+
+## pythonbrew
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
+## nvm
+[[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
+
+## phantomjs
+[[ -d /usr/local/Cellar/phantomjs/1.6.1/bin/ ]] && PATH=$PATH:/usr/local/Cellar/phantomjs/1.6.1/bin/
 
