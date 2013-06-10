@@ -47,3 +47,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 ZSH_CUSTOM=$HOME/.zsh-custom
 
+# Include local settings
+[[ -s $HOME/.zsh.local ]] && source $HOME/.zsh.local
+
