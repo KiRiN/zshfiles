@@ -38,11 +38,15 @@ alias df='df -h'
 #alias -g A='| awk'
 #alias -g W='| wc'
 
+# 2 way redirect. for exsample '$ echo "some texts" > file1 > file2 '
+setopt multios
+
 ## 補完
 autoload -U compinit
 compinit 
 setopt list_packed
 zstyle ':completion:*' list-colors ''
+
 # 訂正
 setopt correct
 
@@ -61,8 +65,11 @@ bindkey -e
 ## 
 export EDITOR=/usr/bin/vim
 
-## 
+# Don't remove the slash of end of directory name
 setopt noautoremoveslash
+
+
+# この辺はlocalの設定に移すべきかな？
 
 ## perlbrew
 [[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
