@@ -48,5 +48,5 @@ source $ZSH/oh-my-zsh.sh
 ZSH_CUSTOM=$HOME/.zsh-custom
 
 # Include local settings
-[[ -s $HOME/.zsh.local ]] && source $HOME/.zsh.local
+[[ -s $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
 
